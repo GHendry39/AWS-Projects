@@ -1,0 +1,42 @@
+@media only screen and (max-width:1440px) {
+	
+  html, body {
+    font-size: 1.3rem;
+    }
+  }
+
+/* Smaller tablets to larger tablets */
+@media only screen and (max-width:1023px) {
+	html, body {
+    font-size: 1.2rem;
+  }
+
+}
+
+/* Larger phones to smaller tablets */
+@media only screen and (max-width:767px) {
+	.cover-title {
+    font-size: 1.5rem;
+  }
+}
+
+/* Smaller phones to medium phones */
+@media only screen and (max-width:425px) {
+  
+  header {
+    font-size: 1rem;
+  }
+  
+  .home-cover {
+    height: 70vh;
+  }
+  
+  .cover-contents {
+    display: block;
+    text-align: center;
+  }
+
+  table {
+    font-size: .7rem;
+  }
+}
