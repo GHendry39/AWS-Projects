@@ -14,19 +14,17 @@ body {
 }
 
 h1 {
-  font-size: 4rem;
+  font-size: 2.5rem;
   text-justify: auto;
   border-bottom: 5px solid #4407ed;
   padding: 2rem;
 }
 h2 {
   font-size: 2rem;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding: 2rem 0;
 }
 h3 {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding: 2rem 0;
 }
 
 /* .clearfix {
@@ -60,7 +58,9 @@ header {
   grid-area: logo;
   margin: 30px;
 }
-
+.header-logo p {
+  font-weight: 700;
+}
 .main-nav li {
   display: inline-block;
   margin-right: 40px;
@@ -159,7 +159,7 @@ footer {
   text-align: left;
   width: 60%;
   margin: 0 auto;
-  font-size: 1.5rem;
+  font-size: 1rem;
 }
 
 input[type="text"],
