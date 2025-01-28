@@ -19,19 +19,19 @@
     <link
       rel="apple-touch-icon"
       sizes="180x180"
-      href="/img/favicon_io/apple-touch-icon.png"
+      href="img/favicon_io/apple-touch-icon.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="/img/favicon_io/favicon-32x32.png"
+      href="img/favicon_io/favicon-32x32.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="16x16"
-      href="/img/favicon_io/favicon-16x16.png"
+      href="img/favicon_io/favicon-16x16.png"
     />
     <link rel="manifest" href="/img/favicon_io/site.webmanifest" />
     <link rel="stylesheet" type="text/css" href="./css/style.css" />
@@ -50,30 +50,26 @@
       </nav>
     </header>
 
-    <section class="main-text">
-      <h1>Projects</h1>
-      <p>
-        Here are a selection of the projects that I have been involved in, the
-        architecture and technology used. Click on the thumbnail to see details.
-      </p>
-      <table class="project-table">
-        <tr>
-          <th>Project</th>
-          <th>Thumbnail</th>
-          <th>Description</th>
-        </tr>
-        <tr>
-          <td>Static website on Amazon S3</td>
-          <td></td>
-          <td>
-            This website is hosted as a static website in an Amazon S3 bucket.
-            S3 only supports http:// traffic and requires a domain registered
-            with Amazon Route 53 DNS server. See
-            <span><a href="./static-website.html">Static Website</a></span> for
-            details
-          </td>
-        </tr>
-      </table>
+    <section class="title">
+      <div class="title-container">
+        <h2>Static Website</h2>
+      </div>
+    </section>
+
+    <section class="description">
+      <div class="title-container">
+        <p>
+          This website is hosted as a static website in an Amazon S3 bucket. S3
+          only supports http:// traffic and requires a domain registered with
+          Amazon Route 53 DNS server.
+        </p>
+      </div>
+      <div class="diagram">
+        <img
+          src="./img/Static website diagram.png"
+          alt="website architecture"
+        />
+      </div>
     </section>
 
     <footer>
