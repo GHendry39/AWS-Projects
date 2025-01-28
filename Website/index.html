@@ -34,6 +34,7 @@
       href="img/favicon_io/favicon-16x16.png"
     />
     <link rel="manifest" href="/img/favicon_io/site.webmanifest" />
+    <link rel="stylesheet" type="text/css" href="./css/fluid.css" />
     <link rel="stylesheet" type="text/css" href="./css/style.css" />
     <link rel="stylesheet" type="text/css" href="./css/media-query.css" />
   </head>
@@ -62,49 +63,87 @@
       <p>
         Do you need help getting into the AWS cloud or to configure your current
         workload? Contact me using the form below or email me at
-        <span
-          ><a href="mailto:admin@aws.ogmorevalleywebsites.co.uk"
-            >G Hendry AWS</a
-          ></span
-        >
+        <span><a href="mailto:ghendryaws@gmail.com">G Hendry AWS</a></span>
         for architecting advice or design. See my projects portfolio for
         examples of my work.
       </p>
     </section>
 
     <section class="about-me">
-      <h2>About me</h2>
-      <p>
-        My name is Graeme Hendry. I am an experienced electronics design
-        engineer and quality engineer. Having taken early retirement from
-        manufacturing, I have taken up website design and cloud solutions
-        architecting. My previous life in a mass-production environment has
-        given me a great appreciation of the importance of process controls and
-        documentation which makes me ideal for generating your resilient
-        solution to take advantage of the AWS cloud.
-      </p>
+      <div class="about-contents">
+        <h2>About me</h2>
+        <p>
+          My name is Graeme Hendry. I am an experienced electronics design
+          engineer and quality engineer. Having taken early retirement from
+          manufacturing, I have taken up website design and cloud solutions
+          architecting. My previous life in a mass-production environment has
+          given me a great appreciation of the importance of process controls
+          and documentation which makes me ideal for generating your resilient
+          solution to take advantage of the AWS cloud.
+        </p>
+      </div>
     </section>
 
-    <section class="contact-form">
+    <section class="contact-section">
       <h2>Contact Me</h2>
       <form
-        action="mailto:admin@aws.ogmorevalleywebsites.co.uk"
+        action="mailto:ghendryaws@gmail.com"
         method="post"
         enctype="text/plain"
+        class="contact-form"
       >
-        Name:
-        <input type="text" name="name" /><br />
-        E-mail:
-        <input type="text" name="mail" /><br />
-        Comment:
-        <input type="text" name="comment" size="50" /><br /><br />
-        <input type="submit" value="Send" />
-        <input type="reset" value="Reset" />
+        <div class="row">
+          <div class="col span_1_of_3 contact-label">
+            <label for="name">Name</label>
+          </div>
+          <div class="col span_2_of_3">
+            <input
+              type="text"
+              name="name"
+              id="name"
+              placeholder="Your Name"
+              required
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col span_1_of_3 contact-label">
+            <label for="email">Email</label>
+          </div>
+          <div class="col span_2_of_3">
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Your Email"
+              required
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col span_1_of_3 contact-label">
+            <label for="message">Drop me a line</label>
+          </div>
+          <div class="col span_2_of_3">
+            <textarea
+              name="message"
+              id="message"
+              placeholder="Your Message"
+            ></textarea>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col span_1_of_3 contact-label">
+            <label>&nbsp</label>
+          </div>
+          <div class="col span_2_of_3">
+            <input type="submit" value="Send it!" />
+          </div>
+        </div>
       </form>
     </section>
-
     <footer>
-      <p>Copyright 2024 Graeme Hendry - AWS Solutions Architect</p>
+      <p>Copyright 2025 Graeme Hendry - AWS Solutions Architect</p>
     </footer>
   </body>
 </html>

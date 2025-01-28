@@ -1,15 +1,32 @@
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-html, body {
-	background-color: white;
-	color: black;
-	text-rendering: optimizeLegibility;
-	font-size: 1.5rem;
-	font-family: 'roboto','Arial', sans-serif;
+html,
+body {
+  background-color: white;
+  color: black;
+  text-rendering: optimizeLegibility;
+  font-size: 32px;
+  font-family: "roboto", "Arial", sans-serif;
+}
+
+h1 {
+  font-size: 4rem;
+  text-justify: auto;
+  border-bottom: 5px solid #4407ed;
+  padding: 2rem;
+}
+h2 {
+  font-size: 2rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+h3 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 /* .clearfix {
@@ -24,108 +41,189 @@ html, body {
 } */
 
 header {
-	background-color: white;
-	color: black;
-	text-rendering: optimizeLegibility;
-	font-family: 'barlow condensed','Arial', sans-serif;
-	display: grid;
-	grid: 'logo menu';
+  background-color: white;
+  color: black;
+  text-rendering: optimizeLegibility;
+  font-family: "barlow condensed", "Arial", sans-serif;
+  display: grid;
+  grid: "logo menu";
 }
 
 .main-nav {
-	grid-area: menu;
-	text-decoration: none;
-	text-align: right;
-	margin: 30px;
+  grid-area: menu;
+  text-decoration: none;
+  text-align: right;
+  margin: 30px;
 }
 
 .header-logo {
-	grid-area: logo;
-	margin: 30px;
+  grid-area: logo;
+  margin: 30px;
 }
 
 .main-nav li {
-	display: inline-block;
-	margin-right: 40px;
+  display: inline-block;
+  margin-right: 40px;
 }
 
 .main-nav li a:link,
 .main-nav li a:visited {
-	text-decoration: none;
-	color: black;
+  text-decoration: none;
+  color: black;
 }
 
 .main-nav li a:hover,
 .main-nav li a:active {
-	border-bottom: 2px solid #4407ed;
-	-webkit-transition: border-bottom 0.2s;
-	transition: border-bottom 0.2s;
-}
-
-.home-cover{
-	background-image: linear-gradient(rgba(0, 0, 0, .3),rgba(0,0,0,.5)), url(../img/saas-concept-collage.jpg);
-	height: 60vh;
-	background-size: cover;
-	background-position: center;
-	position: relative;
-}
-
-.main-text, .about-me, .contact-form {
-	padding: 2rem;
-}
-
-.cover-contents {
-	position:absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	width: 100%;
-	height: 100%;
-	display: flex;
-	justify-content: center;
-	align-items:center;
-}
-
-
-
-.cover-contents img {
-	width: 10rem;
-	height: 10rem;
-	display: inline-block;
-	margin: 1rem;
-}
-
-.cover-title {
-	color: orange;
-	display: inline-block;
-	text-align: center;
-	font-size: 2rem;
-	padding: 20px;
-}
-
-#graeme {
-	border-radius: 50%;
-}
-
-.project-table {
-	table-layout: fixed;
-  width: 100%; 
-	margin: 2rem 0;
-}
-
-table, th, td {
-  border: 2px solid black;
-	border-collapse: collapse;
-	background-color: lightgrey;
-	padding: 10px;
+  border-bottom: 5px solid #4407ed;
+  -webkit-transition: border-bottom 0.2s;
+  transition: border-bottom 0.2s;
 }
 
 footer {
-	background-color: white;
-	color: black;
-	text-rendering: optimizeLegibility;
-	font-size: 16px;
-	font-family: 'barlow condensed','Arial', sans-serif;
-	text-align: center;
+  background-color: white;
+  color: black;
+  text-rendering: optimizeLegibility;
+  font-size: 16px;
+  font-family: "barlow condensed", "Arial", sans-serif;
+  text-align: center;
+  margin: 2rem;
 }
 
+/* Common */
+.title {
+  text-align: center;
+}
+
+/* Home Page */
+.home-cover {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)),
+    url(../img/saas-concept-collage.jpg);
+  height: 60vh;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.main-text,
+.contact-section {
+  margin: 0 2rem;
+}
+
+.about-me {
+  background-color: #eee;
+  padding-bottom: 2rem;
+}
+
+.about-contents {
+  margin: 0 2rem;
+}
+
+.cover-contents {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cover-contents img {
+  width: 10rem;
+  height: 10rem;
+  display: inline-block;
+  margin: 1rem;
+}
+
+.cover-title {
+  color: orange;
+  display: inline-block;
+  text-align: center;
+  font-size: 2rem;
+  padding: 20px;
+}
+
+#graeme {
+  border-radius: 50%;
+}
+
+/* Form*/
+.row {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.contact-form {
+  text-align: left;
+  width: 60%;
+  margin: 0 auto;
+  font-size: 1.5rem;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 8px;
+  border-radius: 3px;
+  border: 1px solid #aaa;
+  background-color: #fff;
+  font-size: 1rem;
+}
+
+input[type="submit"] {
+  font-size: 1rem;
+  width: 5rem;
+  height: 2rem;
+  border-radius: 10px;
+  border: 5px, solid, #4407ed;
+}
+
+textarea {
+  height: 200px;
+}
+
+/* Project Page */
+
+.main-text {
+  margin: 2rem;
+}
+
+.project-table {
+  table-layout: fixed;
+  width: 100%;
+  margin: 2rem 0;
+}
+
+.project-table img {
+  width: 10rem;
+}
+
+.thumbnail-cell {
+  text-align: center;
+}
+
+table,
+th,
+td {
+  border: 2px solid black;
+  border-collapse: collapse;
+  background-color: lightgrey;
+  padding: 10px;
+}
+
+/* Detail Pages */
+
+.description {
+  margin: 2rem;
+}
+
+.diagram {
+  text-align: center;
+}
+
+.diagram img {
+  width: 50rem;
+}

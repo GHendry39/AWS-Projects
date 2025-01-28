@@ -51,24 +51,38 @@
     </header>
 
     <section class="title">
-      <div class="title-container">
-        <h2>Static Website</h2>
-      </div>
+      <h1>Static Website</h1>
     </section>
 
     <section class="description">
-      <div class="title-container">
+      <h2>Description</h2>
+      <div class="description-container">
         <p>
           This website is hosted as a static website in an Amazon S3 bucket. S3
           only supports http:// traffic and requires a domain registered with
           Amazon Route 53 DNS server.
         </p>
       </div>
+      <h2>Architecture Diagram</h2>
       <div class="diagram">
         <img
           src="./img/Static website diagram.png"
           alt="website architecture"
         />
+      </div>
+      <h2>Services</h2>
+      <div class="services">
+        <h3>Amazon S3</h3>
+        <p>
+          Amazon S3 (Simple Storage Solution) is an object storage service that
+          stores data in 'buckets'. As a special function, S3 allows the
+          contents of a bucket host a static website.
+        </p>
+        <h3>Amazon Route 53</h3>
+        <p>
+          Amazon Route 53 is a Domain Name Server (DNS) that translates URLs to
+          IP addresses for websites/web apps hosted by AWS.
+        </p>
       </div>
     </section>
 
