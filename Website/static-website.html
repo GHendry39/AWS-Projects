@@ -55,8 +55,8 @@
     </section>
 
     <section class="description">
-      <h2>Description</h2>
       <div class="description-container">
+        <h2>Description</h2>
         <p>
           This website is hosted as a static website in an Amazon S3 bucket and
           published via an Amazon CloudFront distribution. The domain name is
@@ -71,30 +71,48 @@
           alt="website architecture"
         />
       </div>
-      <h2>Services</h2>
       <div class="services">
+        <h2>Services</h2>
         <h3>Amazon Route 53</h3>
         <p>
-          Amazon Route 53 is a Domain Name Server (DNS) that translates internet
-          URLs to IP addresses for websites/web apps hosted by AWS. The website
-          domain was registered in Route 53.
+          Amazon Route 53 is a highly available and scalable Domain Name System
+          (DNS) web service. <br />
+          You can use Route 53 to perform three main functions in any
+          combination: domain registration, DNS routing, and health checking.<br />The
+          website domain was registered in Route 53.
         </p>
         <h3>Amazon S3</h3>
         <p>
-          Amazon S3 (Simple Storage Solution) is an object storage service that
-          stores data in 'buckets'.
+          Amazon Simple Storage Service (Amazon S3) is storage for the internet.
+          You can use Amazon S3 to store and retrieve any amount of data at any
+          time, from anywhere on the web.
         </p>
         <h3>Amazon CloudFront</h3>
         <p>
-          Amazon CloudFront is a Content Delivery Network (CDN) that distributes
-          the website to Edge location all over the world. This ensures low
-          latencies for all users.
+          Amazon CloudFront speeds up distribution of your static and dynamic
+          web content, such as .html, .css, .php, image, and media files. When
+          users request your content, CloudFront delivers it through a worldwide
+          network of edge locations that provide low latency and high
+          performance.
         </p>
         <h3>AWS Certificate Manager</h3>
         <p>
-          To make the website access secure, we need an SSL certificate. This is
-          supplied by the AS Certificate manager
+          AWS Certificate Manager (ACM) helps you to provision, manage, and
+          renew publicly trusted TLS certificates on AWS based websites.
         </p>
+      </div>
+      <div class="costs">
+        <h2>Costs</h2>
+        <h3>Amazon Route 53</h3>
+        <p>Domain Registration: $9/year<br />Hosted Zone: $0.50/month</p>
+        <h3>Amazon S3</h3>
+        <p>$0.01/month (after Free Tier)</p>
+        <h3>Amazon CloudFront</h3>
+        <p>Free</p>
+        <h3>AWS Certificate Manager</h3>
+        <p>Free</p>
+        <h3>Total</h3>
+        <p>$1.26/month</p>
       </div>
     </section>
 

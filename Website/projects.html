@@ -64,18 +64,19 @@
           <th>Description</th>
         </tr>
         <tr>
-          <td>Static website on Amazon S3</td>
+          <td>Static website</td>
           <td class="thumbnail-cell">
             <a href="./static-website.html"
               ><img
-                src="./img/Static website diagram.png"
+                src="./img/Website Architecture.drawio.png"
                 alt="static website architecture"
             /></a>
           </td>
           <td>
-            This website is hosted as a static website in an Amazon S3 bucket.
-            S3 only supports http:// traffic and requires a domain registered
-            with Amazon Route 53 DNS server.
+            This website is hosted as a static website in an Amazon S3 bucket
+            and published via an Amazon CloudFront distribution. The domain name
+            is managed by Amazon Route 53 with SSL certificate issued by AWS
+            Certificate Manager.
           </td>
         </tr>
       </table>
