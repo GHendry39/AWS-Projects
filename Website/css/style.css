@@ -197,7 +197,7 @@ textarea {
   margin: 2rem 0;
 }
 
-.project-table img {
+.thumbnail-cell img {
   width: 100%;
 }
 
@@ -225,5 +225,5 @@ td {
 }
 
 .diagram img {
-  width: 50%;
+  width: 70%;
 }
