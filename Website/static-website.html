@@ -58,30 +58,42 @@
       <h2>Description</h2>
       <div class="description-container">
         <p>
-          This website is hosted as a static website in an Amazon S3 bucket. S3
-          only supports http:// traffic and requires a domain registered with
-          Amazon Route 53 DNS server.
+          This website is hosted as a static website in an Amazon S3 bucket and
+          published via an Amazon CloudFront distribution. The domain name is
+          managed by Amazon Route 53 with SSL certificate issued by AWS
+          Certificate Manager.
         </p>
       </div>
       <h2>Architecture Diagram</h2>
       <div class="diagram">
         <img
-          src="./img/Static website diagram.png"
+          src="./img/Website Architecture.drawio.png"
           alt="website architecture"
         />
       </div>
       <h2>Services</h2>
       <div class="services">
+        <h3>Amazon Route 53</h3>
+        <p>
+          Amazon Route 53 is a Domain Name Server (DNS) that translates internet
+          URLs to IP addresses for websites/web apps hosted by AWS. The website
+          domain was registered in Route 53.
+        </p>
         <h3>Amazon S3</h3>
         <p>
           Amazon S3 (Simple Storage Solution) is an object storage service that
-          stores data in 'buckets'. As a special function, S3 allows the
-          contents of a bucket host a static website.
+          stores data in 'buckets'.
         </p>
-        <h3>Amazon Route 53</h3>
+        <h3>Amazon CloudFront</h3>
         <p>
-          Amazon Route 53 is a Domain Name Server (DNS) that translates URLs to
-          IP addresses for websites/web apps hosted by AWS.
+          Amazon CloudFront is a Content Delivery Network (CDN) that distributes
+          the website to Edge location all over the world. This ensures low
+          latencies for all users.
+        </p>
+        <h3>AWS Certificate Manager</h3>
+        <p>
+          To make the website access secure, we need an SSL certificate. This is
+          supplied by the AS Certificate manager
         </p>
       </div>
     </section>
