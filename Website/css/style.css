@@ -96,7 +96,11 @@ footer {
 
 /* Home Page */
 .home-cover {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)),
+  background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.9)
+    ),
     url(../img/saas-concept-collage.jpg);
   height: 60vh;
   background-size: cover;
