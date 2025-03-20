@@ -13,10 +13,10 @@ jobs:
         uses: reggionick/s3-deploy@v4
         with:
           folder: Website
-          bucket: 'ghendryaws.co.uk'
-          bucket-region: 'us-east-1'
-          dist-id: 'arn:aws:cloudfront::841162666036:distribution/E25OTTFTGX5XOT'
-          invalidation: /
+          bucket: arn:aws:s3:::ghendryaws.co.uk
+          bucket-region: us-east-1
+          dist-id: arn:aws:cloudfront::841162666036:distribution/E25OTTFTGX5XOT
+          invalidation: /*
           delete-removed: true
           no-cache: true
           private: true
