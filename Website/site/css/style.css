@@ -83,7 +83,7 @@ footer {
   background-color: white;
   color: black;
   text-rendering: optimizeLegibility;
-  font-size: 16px;
+  font-size: 24px;
   font-family: "barlow condensed", "Arial", sans-serif;
   text-align: center;
   margin: 2rem;
@@ -148,12 +148,8 @@ footer {
   font-size: 2rem;
   padding: 20px;
 }
-
-#graeme {
-  border-radius: 50%;
-}
-
 /* Form*/
+/* 
 .row {
   max-width: 1140px;
   margin: 0 auto;
@@ -187,7 +183,7 @@ input[type="submit"] {
 
 textarea {
   height: 200px;
-}
+} */
 
 /* Project Page */
 
