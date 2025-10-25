@@ -216,8 +216,10 @@ td {
 
 /* Detail Pages */
 
-.description {
-  margin: 2rem;
+.details {
+  width: 80%;
+  margin: auto;
+  padding-top: 50px;
 }
 
 .diagram {
@@ -226,4 +228,8 @@ td {
 
 .diagram img {
   width: 70%;
+}
+
+.description p {
+  padding: 20px 0;
 }

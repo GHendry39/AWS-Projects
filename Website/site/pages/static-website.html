@@ -17,7 +17,7 @@
     <!-- End Google Tag Manager -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Graeme Hendry AWS</title>
+    <title>Graeme Hendry AWS - Static Website</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -94,17 +94,22 @@
       <h1>Static Website</h1>
     </section>
 
-    <section class="description">
+    <section class="details">
       <div class="description-container">
+        <div class="diagram">
+          <img src="../img/static website.png" alt="website screenshot" />
+        </div>
         <h2>Description</h2>
         <p>
           This website is hosted as a static website in an Amazon S3 bucket and
           published via an Amazon CloudFront distribution. The domain name is
           managed by Amazon Route 53 with SSL certificate issued by AWS
-          Certificate Manager.
+          Certificate Manager. Deployment of the website code to Amazon S3 and
+          distribution via Amazon CloudFront is managed from a GitHub repository
+          using GitHub Actions.
         </p>
       </div>
-      <h2>Architecture Diagram</h2>
+      <h2>Architecture</h2>
       <div class="diagram">
         <img
           src="../img/Website Architecture.drawio.png"
@@ -113,46 +118,87 @@
       </div>
       <div class="services">
         <h2>Services</h2>
-        <h3>Amazon Route 53</h3>
-        <p>
-          Amazon Route 53 is a highly available and scalable Domain Name System
-          (DNS) web service. <br />
-          You can use Route 53 to perform three main functions in any
-          combination: domain registration, DNS routing, and health checking.<br />The
-          website domain was registered in Route 53.
-        </p>
-        <h3>Amazon S3</h3>
-        <p>
-          Amazon Simple Storage Service (Amazon S3) is storage for the internet.
-          You can use Amazon S3 to store and retrieve any amount of data at any
-          time, from anywhere on the web.
-        </p>
-        <h3>Amazon CloudFront</h3>
-        <p>
-          Amazon CloudFront speeds up distribution of your static and dynamic
-          web content, such as .html, .css, .php, image, and media files. When
-          users request your content, CloudFront delivers it through a worldwide
-          network of edge locations that provide low latency and high
-          performance.
-        </p>
-        <h3>AWS Certificate Manager</h3>
-        <p>
-          AWS Certificate Manager (ACM) helps you to provision, manage, and
-          renew publicly trusted TLS certificates on AWS based websites.
-        </p>
-      </div>
-      <div class="costs">
-        <h2>Costs</h2>
-        <h3>Amazon Route 53</h3>
-        <p>Domain Registration: $9/year<br />Hosted Zone: $0.50/month</p>
-        <h3>Amazon S3</h3>
-        <p>$0.01/month (after Free Tier)</p>
-        <h3>Amazon CloudFront</h3>
-        <p>Free</p>
-        <h3>AWS Certificate Manager</h3>
-        <p>Free</p>
-        <h3>Total</h3>
-        <p>$1.26/month</p>
+        <table class="project-table">
+          <tr>
+            <th>Service</th>
+            <th>Description</th>
+            <th>Cost</th>
+          </tr>
+          <tr>
+            <td>Amazon Route 53</td>
+            <td>
+              Amazon Route 53 is a highly available and scalable Domain Name
+              System (DNS) web service.
+            </td>
+            <td>
+              <p>Domain Registration: $9/year</p>
+              <p>Hosted Zone: $0.50/month</p>
+            </td>
+          </tr>
+          <tr>
+            <td>Amazon Simple Storage Service (S3)</td>
+            <td>Amazon S3 is a highly available object storage service.</td>
+            <td>$0.01/month</td>
+          </tr>
+          <tr>
+            <td>Amazon CloudFront</td>
+            <td>
+              Amazon CloudFront speeds up distribution of static and dynamic web
+              content. When users request your content, CloudFront delivers it
+              through a worldwide network of edge locations that provide low
+              latency and high performance.
+            </td>
+            <td>Free</td>
+          </tr>
+          <tr>
+            <td>AWS Certification Manager</td>
+            <td>
+              AWS Certificate Manager (ACM) helps you to provision, manage, and
+              renew publicly trusted TLS/SSL certificates on AWS-based websites.
+            </td>
+            <td>Free</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td style="text-align: right">Total</td>
+            <td>$1.26/month</td>
+          </tr>
+        </table>
+        <div class="description">
+          <h2>Description</h2>
+          <p>
+            When a user asks their browser to access the site, the browser
+            requests the website code using the website URL.
+          </p>
+          <p>
+            Amazon Route 53 checks the best route for the request and gets the
+            data from the edge location and returns it to the browser. The
+            website domain was registered in Route 53.
+          </p>
+          <p>
+            Amazon Cloudfront caches the website code from Amazon S3 and
+            supplies it to the relevant edge location. This data is secured
+            using an SSL certificate supplied by Amazon Certificate manager.
+          </p>
+          <p>
+            The original website files are stored in an S3 bucket with the same
+            name as the website URL. When the developer needs to update the
+            files, he commits the new code to a GitHub repository. This triggers
+            a GitHub Actions workflow that uploads the new files to the S3
+            bucket and invalidates the CloudFront distribution to clear the
+            cache of the obsolete files. Any new request for the website files
+            causes the cache to be populated with the new code.
+          </p>
+        </div>
+        <div class="conclusion">
+          <h2>Conclusion</h2>
+          <p>
+            AWS provides a secure, available service to host static websites
+            like this one. The use of GitHub actions automates the deployment of
+            the website files to update the hosted code. This solution is
+            cheaper than hosting the website with a conventional host.
+          </p>
+        </div>
       </div>
     </section>
 
