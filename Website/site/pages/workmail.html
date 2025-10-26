@@ -17,7 +17,7 @@
     <!-- End Google Tag Manager -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Graeme Hendry AWS</title>
+    <title>Graeme Hendry AWS - Static Website</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -91,47 +91,82 @@
     </header>
 
     <section class="title">
-      <h1>Workmail</h1>
+      <h1>WorkMail Email Server</h1>
     </section>
 
-    <section class="description">
+    <section class="details">
       <div class="description-container">
-        <h2>Description</h2>
+        <div class="diagram">
+          <img src="../img/workmail screenshot.png" alt="workmail screenshot" />
+        </div>
+        <h2>Summary</h2>
         <p>
           Amazon WorkMail is a managed email and calendar service that offers
           strong security controls and support for desktop and mobile clients.
           It uses the domain and hosted zone created for the static website.
         </p>
       </div>
-      <h2>Architecture Diagram</h2>
+      <h2>Architecture</h2>
       <div class="diagram">
         <img src="../img/workmail.drawio.png" alt="workmail architecture" />
       </div>
       <div class="services">
         <h2>Services</h2>
-        <h3>Amazon WorkMail</h3>
-        <p>
-          Amazon WorkMail helps you manage your corporate email infrastructure
-          and eliminates the need for up-front investments in licensing or
-          on-premises. <br /><br />
-        </p>
-        <h3>Amazon Route 53</h3>
-        <p>
-          Amazon Route 53 is a highly available and scalable Domain Name System
-          (DNS) web service. <br /><br />
-          You can use Route 53 to perform three main functions in any
-          combination: domain registration, DNS routing, and health checking.<br /><br />
-          We can use the hosted zone in Route 53
-        </p>
-      </div>
-      <div class="costs">
-        <h2>Costs</h2>
-        <h3>Amazon Route 53</h3>
-        <p>Domain Registration: $9/year<br />Hosted Zone: $0.50/month</p>
-        <h3>Amazon WorkMail</h3>
-        <p>$4.00/user/month (after free 30-day trial for 25 users)</p>
-        <h3>Total</h3>
-        <p>$5.26/month</p>
+        <table class="project-table">
+          <tr>
+            <th class="row-service">Service</th>
+            <th class="row-description">Description</th>
+            <th class="row-cost">Cost</th>
+          </tr>
+          <tr>
+            <td>Amazon WorkMail</td>
+            <td>
+              Amazon WorkMail helps you manage your corporate email
+              infrastructure and eliminates the need for up-front investments in
+              licensing or on-premises.
+            </td>
+            <td>$4.00/user/month (after free 30-day trial for 25 users)</td>
+          </tr>
+          <tr>
+            <td>Amazon Route 53</td>
+            <td>
+              Amazon Route 53 is a highly available and scalable Domain Name
+              System (DNS) web service.
+            </td>
+            <td>Already set up for static website</td>
+          </tr>
+          <tr>
+            <td colspan="2" style="text-align: right">Total</td>
+            <td>$4.00/month</td>
+          </tr>
+        </table>
+        <div class="description">
+          <h2>Description</h2>
+          <p>
+            A user can access the Amazon WorkMail account using the WorkMail web
+            app or through any standard email app such as MS Outlook etc. To
+            access the web app, they use the WorkMail app URL - in this case
+            https://ghendryaws.awsapps.com/mail. After logging in, they can
+            access their email, calendar and contacts via the web interface.
+          </p>
+          <p>
+            WorkMail adds 3 DNS records to the hosted zone - TXT Domain
+            Ownership, MX WorkMail Configuration, and CNAME Autodiscover. Amazon
+            Route 53 then routes mail requests to and from WorkMail.
+          </p>
+          <p>
+            In this case, the Route 53 hosted zone that was set up for the
+            static website project can be used to route mail requests. A new
+            hosted zone is not required especially for WorkMail.
+          </p>
+        </div>
+        <div class="conclusion">
+          <h2>Conclusion</h2>
+          <p>
+            Amazon WorkMail is a managed email and calendar service that offers
+            strong security controls and support for desktop and mobile clients.
+          </p>
+        </div>
       </div>
     </section>
 

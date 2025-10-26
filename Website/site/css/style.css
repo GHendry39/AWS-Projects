@@ -214,6 +214,18 @@ td {
   padding: 10px;
 }
 
+.row-service {
+  width: 20%;
+}
+
+.row-description {
+  width: 55%;
+}
+
+.row-cost {
+  width: 25%;
+}
+
 /* Detail Pages */
 
 .details {
