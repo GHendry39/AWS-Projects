@@ -1,42 +1,38 @@
-@media only screen and (max-width:1440px) {
-	
-  html, body {
-    font-size: 1.3rem;
-    }
+@media only screen and (max-width: 1440px) {
+  html,
+  body {
+    font-size: 28px;
   }
+}
 
 /* Smaller tablets to larger tablets */
-@media only screen and (max-width:1023px) {
-	html, body {
-    font-size: 1.2rem;
+@media only screen and (max-width: 1023px) {
+  html,
+  body {
+    font-size: 24px;
   }
-
 }
 
 /* Larger phones to smaller tablets */
-@media only screen and (max-width:767px) {
-	.cover-title {
-    font-size: 1.5rem;
+@media only screen and (max-width: 767px) {
+  html,
+  body {
+    font-size: 20px;
   }
 }
 
 /* Smaller phones to medium phones */
-@media only screen and (max-width:425px) {
-  
-  header {
-    font-size: 1rem;
-  }
-  
-  .home-cover {
-    height: 70vh;
-  }
-  
-  .cover-contents {
-    display: block;
-    text-align: center;
+@media only screen and (max-width: 425px) {
+  html,
+  body {
+    font-size: 12px;
   }
 
-  table {
-    font-size: .7rem;
+  .row-service {
+    width: 30%;
+  }
+
+  .row-cost {
+    width: 30%;
   }
 }

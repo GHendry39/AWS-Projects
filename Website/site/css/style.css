@@ -3,7 +3,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-size: 28px;
 }
 
 html,
@@ -12,7 +11,7 @@ body {
   color: black;
   text-rendering: optimizeLegibility;
   font-family: "roboto", "Arial", sans-serif;
-  /* font-size: 32px; */
+  font-size: 28px;
 }
 
 h1 {
@@ -28,17 +27,6 @@ h2 {
 h3 {
   padding: 2rem 0;
 }
-
-/* .clearfix {
-	zoom: 1;
-}
-
-.clearfix:after {
-	content: "";
-	display: table;
-	clear: both;
-	visibility: hidden;
-} */
 
 /* Header */
 header {
@@ -87,7 +75,7 @@ footer {
   background-color: white;
   color: black;
   text-rendering: optimizeLegibility;
-  font-size: 24px;
+  font-size: 0.7rem;
   font-family: "barlow condensed", "Arial", sans-serif;
   text-align: center;
   margin: 2rem;
@@ -139,8 +127,8 @@ footer {
 }
 
 .cover-contents img {
-  width: 10rem;
-  height: 10rem;
+  width: 7rem;
+  height: 7rem;
   display: inline-block;
   margin: 1rem;
 }
@@ -166,8 +154,13 @@ footer {
   margin: 2rem 0;
 }
 
+.project-col {
+  width: 15%;
+}
+
 .thumbnail-cell img {
-  width: 100%;
+  width: 90%;
+  margin: 1rem;
 }
 
 .thumbnail-cell {
@@ -185,11 +178,7 @@ td {
 }
 
 .row-service {
-  width: 20%;
-}
-
-.row-description {
-  width: 55%;
+  width: 25%;
 }
 
 .row-cost {
@@ -213,52 +202,4 @@ td {
 
 .description p {
   padding: 0.5rem 0;
-}
-
-/* Media Queries */
-
-@media (max-width: 425px) {
-  * {
-    font-size: 0.6rem;
-  }
-}
-
-/* @media (min-width: 375px) and (max-width: 425px) {
-  * {
-    font-size: 0.6rem;
-  }
-} */
-
-@media (min-width: 425px) and (max-width: 768px) {
-  * {
-    font-size: 0.7rem;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 1023px) {
-  * {
-    font-size: 0.8rem;
-  }
-}
-
-@media (min-width: 1023px) and (max-width: 1440px) {
-  * {
-    font-size: 0.9rem;
-  }
-}
-
-@media (min-width: 1440px) {
-  * {
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .row-service {
-    width: 25%;
-  }
-
-  .row-description {
-    width: 50%;
-  }
 }
