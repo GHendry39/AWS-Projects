@@ -1,3 +1,4 @@
+/* Global Styles */
 * {
   margin: 0;
   padding: 0;
@@ -38,6 +39,7 @@ h3 {
 	visibility: hidden;
 } */
 
+/* Header */
 header {
   background-color: white;
   color: black;
@@ -79,6 +81,7 @@ header {
   transition: border-bottom 0.2s;
 }
 
+/* Footer */
 footer {
   background-color: white;
   color: black;
@@ -191,6 +194,7 @@ textarea {
   margin: 2rem;
 }
 
+/* Project Page */
 .project-table {
   table-layout: fixed;
   width: 100%;
@@ -203,6 +207,7 @@ textarea {
 
 .thumbnail-cell {
   text-align: center;
+  background-color: #fff;
 }
 
 table,
@@ -227,7 +232,6 @@ td {
 }
 
 /* Detail Pages */
-
 .details {
   width: 80%;
   margin: auto;

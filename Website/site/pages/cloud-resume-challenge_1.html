@@ -91,29 +91,30 @@
     </header>
 
     <section class="title">
-      <h1>Static Website</h1>
+      <h1>Cloud Resume Challenge Part 1</h1>
     </section>
 
     <section class="details">
       <div class="description-container">
         <div class="diagram">
-          <img src="../img/static website.png" alt="website screenshot" />
+          <img src="../img/cloud-resume-challenge.png" alt="CV screenshot" />
         </div>
         <h2>Summary</h2>
         <p>
-          This website is hosted as a static website in an Amazon S3 bucket and
-          published via an Amazon CloudFront distribution. The domain name is
-          managed by Amazon Route 53 with SSL certificate issued by AWS
-          Certificate Manager. Deployment of the website code to Amazon S3 and
-          distribution via Amazon CloudFront is managed from a GitHub repository
-          using GitHub Actions.
+          The
+          <a href="https://cloudresumechallenge.dev/">Cloud Resume Challenge</a>
+          is a guided project to generate a resume webpage hosted in the cloud
+          using cloud resources and development best practices. It comes in 3
+          flavours - AWS, Azure, and Google. Part 1 is to build a static webpage
+          and then add a back-end to store a count of visitors that can be
+          displayed on the page.
         </p>
       </div>
       <h2>Architecture</h2>
       <div class="diagram">
         <img
-          src="../img/Website Architecture.drawio.png"
-          alt="website architecture"
+          src="../img/Resume Challenge Architecture.drawio.png"
+          alt="CV Challenge architecture"
         />
       </div>
       <div class="services">
@@ -123,17 +124,6 @@
             <th class="row-service">Service</th>
             <th class="row-description">Description</th>
             <th class="row-cost">Cost</th>
-          </tr>
-          <tr>
-            <td>Amazon Route 53</td>
-            <td>
-              Amazon Route 53 is a highly available and scalable Domain Name
-              System (DNS) web service.
-            </td>
-            <td>
-              <p>Domain Registration: $9/year</p>
-              <p>Hosted Zone: $0.50/month</p>
-            </td>
           </tr>
           <tr>
             <td>Amazon Simple Storage Service (S3)</td>
@@ -151,51 +141,147 @@
             <td>Free</td>
           </tr>
           <tr>
-            <td>AWS Certification Manager</td>
+            <td>Amazon API Gateway</td>
             <td>
-              AWS Certificate Manager (ACM) helps you to provision, manage, and
-              renew publicly trusted TLS/SSL certificates on AWS-based websites.
+              Amazon API Gateway enables you to create and deploy your own REST
+              and WebSocket APIs at any scale.
             </td>
-            <td>Free</td>
+            <td>$1.16 per 1 million API calls/month</td>
+          </tr>
+          <tr>
+            <td>AWS Lambda</td>
+            <td>
+              With AWS Lambda, you can run code without provisioning or managing
+              servers.
+            </td>
+            <td>
+              <p>$0.0000166667 for every GB-second/month</p>
+              <p>$0.20 per 1M requests</p>
+            </td>
+          </tr>
+          <tr>
+            <td>Amazon DynamoDB</td>
+            <td>
+              Amazon DynamoDB is a fully managed NoSQL database service that
+              provides fast and predictable performance with seamless
+              scalability.
+            </td>
+            <td>
+              <p>$0.7423 per million write request units/month</p>
+              <p>$0.1487 per million read request units/month</p>
+              <p>First 25 GB stored/month is free</p>
+            </td>
           </tr>
           <tr>
             <td colspan="2" style="text-align: right">Total</td>
-            <td>$1.26/month</td>
+            <td>$2.26/month after Free Tier</td>
           </tr>
         </table>
         <div class="description">
           <h2>Description</h2>
           <p>
-            When a user asks their browser to access the site, the browser
-            requests the website code using the website URL.
+            An external domain name with TLS/SSL certification is used to access
+            a Amazon CloudFront distribution, whose origin is an S3 bucket
+            containing the static webpage files. The webpage files are
+            automatically deployed from a GitHub repository using GitHub Actions
           </p>
           <p>
-            Amazon Route 53 checks the best route for the request and gets the
-            data from the edge location and returns it to the browser. The
-            website domain was registered in Route 53.
+            To update the visitor counter, whenever the webpage is loaded,
+            javascript within the webpage makes a GET API call to the endpoint
+            of the Amazon API Gateway HTTP API. The API call triggers the AWS
+            Lambda function to increment the visitor counter and update the
+            Amazon DynamoDB NoSQL database table. The API call returns the new
+            value of the counter.
           </p>
-          <p>
-            Amazon Cloudfront caches the website code from Amazon S3 and
-            supplies it to the relevant edge location. This data is secured
-            using an SSL certificate supplied by Amazon Certificate manager.
-          </p>
-          <p>
-            The original website files are stored in an S3 bucket with the same
-            name as the website URL. When the developer needs to update the
-            files, he commits the new code to a GitHub repository. This triggers
-            a GitHub Actions workflow that uploads the new files to the S3
-            bucket and invalidates the CloudFront distribution to clear the
-            cache of the obsolete files. Any new request for the website files
-            causes the cache to be populated with the new code.
-          </p>
+          <p>The initial stages of the challenge include:</p>
+          <ol>
+            <li>
+              <strong>
+                Set up accounts for development and production workloads using
+                AWS Organizations and Organizational Units (OU).</strong
+              >
+              Accounts take advantage of the Free Tier from AWS during
+              development.
+            </li>
+            <li>
+              <strong> Secure login to the accounts using AWS SSO.</strong>
+              SSO login applies temporary credentials to the user.
+            </li>
+            <li>
+              <strong> Build the static website using HTML and CSS.</strong>
+              Store the website files in an S3 bucket. Set up a GitHub
+              repository to manage version control.
+            </li>
+            <li>
+              <strong> Secure the site using Amazon CloudFront.</strong> Set up
+              a CloudFront distribution using the S3 bucket as its origin.
+            </li>
+            <li>
+              <strong
+                >Point a custom domain name to the CloudFront
+                distribution.</strong
+              >
+              Use an external domain name with an SSL certificate to route to
+              the CloudFront distribution.
+            </li>
+            <li>
+              <strong>
+                Implement the front-end of the visitor counter using
+                JavaScript.</strong
+              >
+              Select the counter element and update it by making a POST request
+              to the back-end whenever the DOM is loaded
+            </li>
+            <li>
+              <strong>
+                Set up an Amazon DynamoDB table to hold the value of the visitor
+                counter.</strong
+              >
+              The table uses a single number field to store the latest value of
+              the visitor counter
+            </li>
+            <li>
+              <strong>
+                Create an HTTP API using Amazon API Gateway to allow the
+                front-end to access the back-end.</strong
+              >
+              Enable Cross-Origin Resource Sharing (CORS) to allow the front-end
+              to make API requests to API Gateway.
+            </li>
+            <li>
+              <strong>
+                Trigger an AWS Lambda function from API Gateway whenever a POST
+                request is received from the front-end.</strong
+              >
+            </li>
+            <li>
+              <strong>
+                Write the Lambda code using Python and boto3 SDK to take the
+                current value of the counter and upload an incremented value to
+                the database.</strong
+              >
+              Manage IAM permissions to allow the Lambda function to access the
+              DynamoDB table.
+            </li>
+            <li>
+              <strong>
+                Deploy the front-end using GitHub Actions whenever the front-
+                end code is updated.</strong
+              >
+              When the GitHub repository is synced, GitHub Actions uploads the
+              new website files to the S3 bucket and invalidates the CloudFront
+              distribution to update its cache.
+            </li>
+          </ol>
         </div>
         <div class="conclusion">
           <h2>Conclusion</h2>
           <p>
-            AWS provides a secure, available service to host static websites
-            like this one. The use of GitHub actions automates the deployment of
-            the website files to update the hosted code. This solution is
-            cheaper than hosting the website with a conventional host.
+            This project shows my CV as a static webpage in the cloud with
+            access to a serverless back-end to store and update a count of
+            visitors to the page. It familiarised me with the practical issues
+            of front-end and back-end serverless technologies to create a
+            dynamic website.
           </p>
         </div>
       </div>
