@@ -34,19 +34,18 @@ header {
   color: black;
   text-rendering: optimizeLegibility;
   font-family: "barlow condensed", "Arial", sans-serif;
-  display: grid;
-  grid: "logo menu";
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .main-nav {
-  grid-area: menu;
   text-decoration: none;
   text-align: right;
   margin: 1rem;
 }
 
 .header-logo {
-  grid-area: logo;
   margin: 1rem;
 }
 .header-logo p {
@@ -122,20 +121,18 @@ footer {
   width: 100%;
   height: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
 }
 
 .cover-contents img {
   width: 7rem;
   height: 7rem;
-  display: inline-block;
   margin: 1rem;
 }
 
 .cover-title {
   color: orange;
-  display: inline-block;
   text-align: center;
   font-size: 2rem;
   padding: 20px;
