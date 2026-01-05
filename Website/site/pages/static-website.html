@@ -202,7 +202,13 @@
     </section>
 
     <footer>
-      <p>Copyright 2025 Graeme Hendry - AWS Solutions Architect</p>
+      <p>
+        Copyright <span id="date"></span> Graeme Hendry - AWS Solutions
+        Architect
+      </p>
     </footer>
   </body>
+  <script>
+    document.getElementById("date").innerHTML = new Date().getFullYear();
+  </script>
 </html>
